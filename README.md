@@ -8,8 +8,7 @@
 A modern, responsive portfolio website built with React.js showcasing my skills, projects, and professional experience as a Software Developer and Full Stack Developer.
 
 ## 🚀 Live Demo
-
-[Visit My Portfolio](https://shristisingh.com) *[Replace with your actual domain]*
+https://portfolio-gilt-one-79.vercel.app/#projects
 
 ## ✨ Features
 
