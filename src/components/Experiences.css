@@ -1,0 +1,355 @@
+/* Experiences.css - Certificate-focused version */
+.experiences-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #302b63, #24243e);
+  color: #fff;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.experiences-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+.experiences-header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.experience-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.experience-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 550px;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  position: relative;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.experience-card:hover::before {
+  opacity: 1;
+}
+
+.experience-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 40px rgba(106, 17, 203, 0.3);
+}
+
+.experience-card.active {
+  transform: translateY(-5px) scale(1.01);
+  box-shadow: 0 10px 30px rgba(106, 17, 203, 0.25);
+}
+
+.experience-card.active .card-header {
+  background: linear-gradient(45deg, #8a2be2, #4a00e0);
+}
+
+.card-header {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.company {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.role {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.card-body {
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.detail {
+  margin-bottom: 20px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.detail-title {
+  font-weight: 600;
+  color: #6a11cb;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.detail-content {
+  padding-left: 26px;
+  color: #ccc;
+}
+
+.duration {
+  background: rgba(106, 17, 203, 0.2);
+  color: #fff;
+  padding: 12px 15px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .duration {
+  background: rgba(106, 17, 203, 0.3);
+  transform: translateX(5px);
+}
+
+.proof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.proof-badge:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(106, 17, 203, 0.4);
+}
+
+.description {
+  line-height: 1.8;
+  color: #ccc;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .description {
+  color: #fff;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.skill {
+  background: linear-gradient(45deg, rgba(106, 17, 203, 0.3), rgba(37, 117, 252, 0.3));
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .skill {
+  background: linear-gradient(45deg, rgba(106, 17, 203, 0.4), rgba(37, 117, 252, 0.4));
+  transform: translateY(-2px);
+}
+
+/* Certificate Modal Styles */
+.certificate-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+}
+
+.modal-content {
+  background: linear-gradient(135deg, #302b63, #24243e);
+  padding: 30px;
+  border-radius: 15px;
+  max-width: 700px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #ccc;
+  transition: color 0.3s ease;
+  background: rgba(0, 0, 0, 0.3);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close:hover {
+  color: #ff6b6b;
+  transform: scale(1.1);
+}
+
+.certificate-image-container {
+  margin: 20px 0;
+  max-height: 60vh;
+  overflow: auto;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 10px;
+}
+
+.certificate-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(45deg, #00b894, #00cec9);
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-size: 1rem;
+}
+
+.download-button:hover {
+  background: linear-gradient(45deg, #00cec9, #00b894);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 184, 148, 0.4);
+}
+
+/* Animation for card entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.experience-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.experience-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.experience-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .experience-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .experience-card {
+    max-width: 100%;
+  }
+  
+  .modal-content {
+    padding: 20px;
+    width: 95%;
+  }
+  
+  .certificate-image-container {
+    max-height: 50vh;
+  }
+  
+  .experiences-header h1 {
+    font-size: 2rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .card-header {
+    padding: 15px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .download-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
